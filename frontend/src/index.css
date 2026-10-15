@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans transition-colors duration-200;
+  }
+}
+
+/* Custom leaflet map adjustments */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  z-index: 10;
+}
+
+/* Dark mode styling for OpenStreetMap tiles without needing paid API keys */
+.dark .leaflet-tile-pane {
+  filter: brightness(0.65) invert(1) contrast(2.6) hue-rotate(200deg) saturate(0.35);
+}
+
+.leaflet-popup-content-wrapper {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid #334155;
+}
+
+.leaflet-popup-tip {
+  background: #0f172a !important;
+}
+
+/* Safe Route custom score gradients */
+.bg-safety-safe {
+  background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+}
+
+.bg-safety-moderate {
+  background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+}
+
+.bg-safety-caution {
+  background: linear-gradient(135deg, #EA580C 0%, #F97316 100%);
+}
+
+.bg-safety-risky {
+  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
